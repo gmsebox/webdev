@@ -42,24 +42,14 @@ public class BeerSelect extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //instantiate a new expert object
-        //pass in the color
-        //return the result into response object.
+
         String input = request.getParameter("Color").toString();
         BeerExpert beerExp = new BeerExpert();
         List<String> results = beerExp.getBrands(input);
-       // response.setContentType("text/html");
-        //PrintWriter out = response.getWriter();
-        //out.println("Beer Selection Advice<br>");
-        
-        //for (Iterator<String> iterator = results.iterator(); iterator.hasNext();) {            
-          //  out.println("<br>Try: "+(String) iterator.next());           
-        //}
-        
+
         request.setAttribute("styles", results);
-        RequestDispatcher view =request.getRequestDispatcher("result.jsp");
-        view.forward(request, response);
-       
+        RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+        view.forward(request, response);       
         
     }
 

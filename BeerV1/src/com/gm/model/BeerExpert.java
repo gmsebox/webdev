@@ -8,7 +8,11 @@ public class BeerExpert{
         if(color.equalsIgnoreCase("amber")){
             brands.add("Jack Amber");
             brands.add("Red Moose");
-        }else {
+        }else if (color.equalsIgnoreCase("light")){
+            brands.add("Light Ale");
+            brands.add("Super light ale");
+        }
+        else {
             brands.add("Jail Pale Ale");
             brands.add("Gout Stout");
         }
